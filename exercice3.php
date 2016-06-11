@@ -244,6 +244,7 @@ A faire en V2 :
 	<form id="refaire" method="post" action="exercice3.php">
 		<p id="valid"><input id="reset" type="submit" name="refaire" value="Refaire l'exercice" id="jouer"/></p>
 	</form>
+	<progress id="progress" max="100" value="37.5">1/8</progress>
         <?php
 		if(isset($_POST["refaire"])){
 			shell_exec('> exercice3.txt');

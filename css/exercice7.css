@@ -306,6 +306,17 @@ ol{
     width: 70%;
 }
 
+#progress{
+   position: absolute;
+   margin-top: -3.5rem;
+   margin-left: 5rem;
+   width: 300px;
+   padding: 4px;
+   background: #FFFFFF;
+   border-radius: 14px;
+   height: 22px;
+}
+
 .textarea{
 	font-size: 17px;
 }
