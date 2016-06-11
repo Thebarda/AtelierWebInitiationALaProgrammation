@@ -309,7 +309,7 @@ A faire en V2 :
         <!-- Enoncé de l'exercice 1 -->
 		<h3 id="exo">Exercice n°8</h3>
 		<p id="intitule">- Exercice bac à sable.</p>
-		<p>Cet exercice vous permet de créer vos propre mélodie</p>
+		<p>Cet exercice vous permet de créer vos propre mélodies</p>
 	</div>
         
         <div id="ecrire">
