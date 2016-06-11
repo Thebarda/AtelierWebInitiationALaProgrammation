@@ -271,11 +271,19 @@ A faire en V2 :
 				 <p>Une variable est une boite dans laquelle nous pouvons stocker une valeur, cette variable est représentée par un nom et par un type (entier, chàine, booléen...) En Sonic Pi, il n'est pas nécessaire de préciser le type car nous affectons directement une valeur.</p>
 				<p><strong>Une variable doit être précédée d'un "$"</strong></p>
             <h3>C. Application à Sonic Pi</h3>
-            <img src="images/variable.PNG" alt="variable" id="exemple1"/>
+            <img src="images/variable.png" alt="variable" id="exemple1"/>
 	    <p class="jouer" id="variable"><a href="#variable">Jouer l'exemple</a></p>
 			 <h2>4. La condition <strong>Si</strong></h2>
 			<p>Une seule des deux actions peut être exécutée (instruction_1 ou instruction_2). Si la condition évaluée est vraie : l'instruction_1 est effectuée, sinon (si l'évalutation est fausse), c'est l'instruction_2 qui est exécutée. On indique la fin du Si pour délimiter son champ.</p>
-
+			<p>Les différents opérateurs de comparaison sont les suivants</p>
+			<ul>
+				<li>== : est égale à</li>
+				<li>!= : est différent de </li>
+				<li>> : est strictement supéreiur à</li>
+				<li>< : est strictement inférieur à </li>
+				<li><= : est inférieur ou égale à</li>
+				<li>>= : est supérieur ou égale à </li>
+			</ul>
 			<h3>A. Application avec Sonic Pi</h3>
 			<img alt="Condition_si" src="images/si.png" id="exemple1">
 			<p class="jouer" id="si"><a href="#si">Jouer l'exemple</a></p>
