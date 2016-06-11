@@ -192,7 +192,6 @@ A faire en V2 :
 		</nav>
         <!--la session cours -->
         <div id="cours">
-			<p>Vous pouvez enfin terminer par l'exercice 7 qui récapitule le cours !.</p>
 			<p>Si vous avez oublié des choses, le cours se trouve ci-dessous !</p>
 	<h1>Session d'initiation à la programmation sur le langage Sonic Pi</h1>
 			 	<p>Chaque langage de programmation possède sa propre syntaxe, il est donc important de la connaître.
@@ -310,6 +309,7 @@ A faire en V2 :
         <!-- Enoncé de l'exercice 1 -->
 		<h3 id="exo">Exercice n°8</h3>
 		<p id="intitule">- Exercice bac à sable.</p>
+		<p>Cet exercice vous permet de créer vos propre mélodie</p>
 	</div>
         
         <div id="ecrire">
