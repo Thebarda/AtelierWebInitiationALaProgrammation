@@ -1,0 +1,4 @@
+5.times do
+  sample :perc_bell, rate: rrand(-0.5, 1)
+  sleep rrand(0.1, 0.8)
+end

@@ -1,0 +1,5 @@
+$m = 75
+play $m
+sleep 0.5
+$m2 = $m+1
+play $m2

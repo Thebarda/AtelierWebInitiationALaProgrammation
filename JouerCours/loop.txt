@@ -1,0 +1,7 @@
+loop do
+  play 60
+  sleep 0.5
+  play 70
+  sleep 0.5
+  play 80
+end

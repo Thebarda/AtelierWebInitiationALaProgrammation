@@ -1,0 +1,18 @@
+$note = 1
+while $note < 11
+  sample :drum_cymbal_closed, amp: 2
+  sample :drum_snare_hard
+  sleep 0.15
+  if $note%3==0
+    sample :drum_cymbal_closed, amp: 2
+    sample :drum_heavy_kick, amp: 5
+    sleep 0.15
+    sample :drum_heavy_kick, amp: 5
+    sleep 0.15
+  else
+    sample :drum_cymbal_closed, amp: 2
+    sample :drum_heavy_kick, amp: 5
+    sleep 0.15
+  end
+  $note = $note+1
+end

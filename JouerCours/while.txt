@@ -1,0 +1,6 @@
+$note = 60
+while $note < 65
+play $note
+sleep 0.5
+$note = $note + 1
+end

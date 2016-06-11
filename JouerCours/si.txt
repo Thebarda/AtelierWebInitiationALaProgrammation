@@ -1,0 +1,6 @@
+$m = 70
+if $m < 80
+play $m
+else
+play 80
+end

@@ -1,0 +1,6 @@
+$note = 60
+define :fonc do |n|
+play n
+end
+
+fonc $note

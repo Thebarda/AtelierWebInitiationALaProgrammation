@@ -1,0 +1,8 @@
+define :maFonction do
+play 60
+sleep 1
+play 65
+sleep 2
+end
+
+maFonction

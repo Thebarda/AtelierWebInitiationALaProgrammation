@@ -1,0 +1,185 @@
+/* HEADER A COPIER COLLER */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600);
+
+*{
+	margin:0px;
+}
+
+body{
+  font-family: 'Open Sans';
+}
+
+/** HEADER **/ 
+header img{
+	margin-left: 20%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 250px;
+	display: inline-block;
+	vertical-align:-230%;
+}
+
+header div{
+	display: inline-block;
+	margin-left: 10%;
+	color: #333333;
+}
+
+header h1{
+	margin-top: 30px;
+	font-size: 3em;
+}
+
+header h2{
+	margin-top: 10px;
+	margin-left: 20%;
+	font-size: 1.2em;
+}
+
+/** MENU **/
+nav{
+	overflow: hidden;
+	background-color: #333333;
+}
+nav ul{
+	width:100%;
+	list-style-type:none;
+	margin-left: 250px;
+	float: left;
+}
+
+nav li{
+	display:inline-block;
+	height:45px;
+	line-height:45px;
+	width: 135px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+#here{
+	background-color:#000000;
+}
+
+a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+/* FIN HEADER A COPIER COLLER */
+
+/*Tous les exemples*/
+
+#titre{
+	font-size:18px;
+	color: deeppink;
+	margin-left:10px;
+}
+
+#buttoncode1{
+    position: absolute;
+    margin-top: -11.6rem;
+    margin-left: 17%;
+    background-color: deeppink;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+    border-radius: 5px;
+}
+#buttoncode2{
+    position: absolute;
+    margin-top: -11.6rem;
+    margin-left: 45%;
+    background-color: deeppink;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+    border-radius: 5px;
+}
+#buttoncode3{
+    position: absolute;
+    margin-top: -11.6rem;
+    margin-left: 73%;
+    background-color: deeppink;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+    border-radius: 5px;
+}
+
+.buttonjouer{
+    background-color: limegreen;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+    border-radius: 5px;
+}
+
+/*Exemple 1*/
+
+#exemple1{
+	width: 28%;	
+    margin-left: 10%;
+}
+#textarea1{
+    position:absolute;
+    display: none;
+    margin-top: 10rem;
+    margin-left: -90%;
+    overflow-y: scroll;
+}
+
+/*Exemple 2*/
+
+#exemple2{
+    width: 28%;
+}
+#textarea2{
+    position: absolute;
+    display: none;
+    margin-top: 10rem;
+    margin-left: -62%;
+    overflow-y: scroll;
+}
+
+/*Exemple 3*/
+
+#exemple3{	
+    width: 28%;
+    padding-top: -2rem;
+}
+#textarea3{
+    display: none;
+    margin-top: 10rem;
+    margin-left: -32%;
+    position: absolute;
+    overflow-y: scroll;
+}
+
+#exemple1,#exemple2, #exemple3{
+	display:inline-block;
+    margin-bottom: 10rem;
+    margin-top: 1rem;
+}
+
+/*FOOTER*/
+
+footer{
+	margin-top: 20px;
+	height: 50px;
+	background-color: #333333;
+	line-height: 50px;
+	text-align: center;
+	color : #FFFFFF;
+	vertical-align: middle;
+}
+footer>p>a{
+    color:orangered;
+}
