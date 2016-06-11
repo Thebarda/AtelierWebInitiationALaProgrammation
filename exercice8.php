@@ -107,7 +107,7 @@
         if($juste == true && $error == false){
                     $fichier = fopen("exercice8.txt", "w+");
                     if(fwrite($fichier, $_POST["code"])){
-                        shell_exec('sonic_pi < exercice1.txt');
+                        shell_exec('sonic_pi < exercice8.txt');
                     }
                     if($id == 1)echo '<p style="color:green;"><b>Code juste !</b></p><br/>';
                     
@@ -316,16 +316,23 @@ A faire en V2 :
             <form id="exo" method="post" action="#cours">
                 <textarea id="code" name="code" class="textarea" cols="70" placeholder="Ecrivez votre code ici..."><?php
                         //Verification du fichier
+			if(isset($_POST["refaire"])){
+                    		shell_exec("> exercice8.txt");
+				$_POST["code"]="";
+				echo $_POST["code"];
+			}
                         if(file_exists("exercice8.txt")==TRUE){
                             //calcule le nombre d'octets du fichier execice1.txt
                             $octet = filesize("exercice8.txt");
                             //Si le fichier n'est pas vide
-                            if($octet!=0){
-                                //ouvre le fichier et affiche son contenu
-                                $fichier = fopen("exercice8.txt", "r");
-                                $contenu = fread($fichier, $octet);
-                                echo $contenu; 
-                            }
+				if(empty($_POST["code"])){
+		                    if($octet!=0){
+		                        //ouvre le fichier et affiche son contenu
+		                        $fichier = fopen("exercice8.txt", "r");
+		                        $contenu = fread($fichier, $octet);
+		                        echo $contenu; 
+		                    }
+				}
                         }
 
                         //Verification du code
@@ -334,14 +341,17 @@ A faire en V2 :
                         }
                     ?></textarea>
                 <div id="validation" style="margin-left:67%;">
-                    <p id="valid"><input id="reset" type="submit" name="refaire" value="Refaire l'exercice" id="jouer"/></p>	
                     <p id="valid"><input id="jouer" type="submit" name="jouer" value="Jouer" id="jouer"/></p>
                     <a href="exercice7.php" id="precedent">Précédent</a>
                 </div>			
             </form>
+		<form id="refaire" method="post" action="exercice8.php">
+			<p id="valid"><input id="reset" type="submit" name="refaire" value="Refaire l'exercice" id="jouer"/></p>
+		</form>
             <?php
 		if(isset($_POST["refaire"])){
                     shell_exec("> exercice8.txt");
+			$_POST["code"]="";
 		}
 		if(!empty($_POST["code"])){
                     checkCode($_POST["code"],1);

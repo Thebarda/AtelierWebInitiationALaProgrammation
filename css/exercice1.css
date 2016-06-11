@@ -255,6 +255,11 @@ ol{
 	padding-left: 25px;
 	padding-right: 25px;
 }
+#refaire{
+	position: absolute;
+	margin-left: 85%;
+	margin-top: -3.5rem;
+}
 
 #validation #valid{
 	display: inline-block;

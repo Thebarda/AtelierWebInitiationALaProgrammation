@@ -162,6 +162,11 @@ A faire en V2 :
 	</div>
 	 <form id="exo" method="post" action="#cours">
            <textarea id="code" name="code" class="textarea" cols="70" placeholder="Ecrivez votre code ici..."><?php
+		if(isset($_POST["refaire"])){
+                    	shell_exec("> exercice4.txt");
+			$_POST["code"]="";
+			echo $_POST["code"];
+		}
                if(file_exists("exercice4.txt")==TRUE){
                //calcule le nombre d'octets du fichier execice1.txt
                 $octet = filesize("exercice4.txt");
@@ -243,15 +248,18 @@ A faire en V2 :
 	}
 	?></textarea>
             <div id="validation">
-				<p id="valid"><input id="reset" type="submit" name="refaire" value="Refaire l'exercice" id="jouer"/></p>
           		 <p id="valid"><input id="jouer" type="submit" name="jouer" value="Jouer" id="jouer"/></p>
           		 <a href="exercice3.php" id="precedent">Précédent</a>
            		 <a href="exercice5.php" id="suivant">Suivant</a>
 			</div>		
         </form>
+	<form id="refaire" method="post" action="exercice4.php">
+		<p id="valid"><input id="reset" type="submit" name="refaire" value="Refaire l'exercice" id="jouer"/></p>
+	</form>
         <?php
 		if(isset($_POST["refaire"])){
-			shell_exec("> exercice4.php");
+			shell_exec('> exercice4.txt');
+			$_POST["code"] = null;
 		}
 		if(!empty($_POST["code"])){
 			if((strpbrk($_POST["code"], '|') != "")||(strpbrk($_POST["code"], '#') != ""))
