@@ -66,7 +66,7 @@ A faire en V2 :
 			   <p id="sonic">play 71</p>
 			   <p>Cependant, que veut dire ce 71 ? Voici un tableau de conversion : </p>
 			   <table>
-			   <caption>Tableau de conversation</caption>
+			   <caption>Tableau de conversion</caption>
 			   	<tr>
 			   		<td>Do</td>
 			   		<td>Ré</td>
