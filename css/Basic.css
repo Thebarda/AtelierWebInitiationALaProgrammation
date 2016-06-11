@@ -117,7 +117,7 @@ form{
 }
 #touches>li{
     display: inline-block;
-    padding-right: 3.5%;
+    padding-right: 3.6%;
     font-weight: bold;
 }
 
@@ -137,6 +137,7 @@ form{
 #envoie #valider{
 	margin-left: 5%;
 	margin-top: 20px;
+	margin-right: 2%;
 	background-color:black;
 	color : #FFFFFF;
 	font-size: 15px;
@@ -153,8 +154,11 @@ form{
 	font-size: 15px;
 	border:none;
 	height: 35px;
+	margin-left: 2%;
 }
-
+#envoie{
+	width: 130%;
+}
 footer{
 	margin-top: 20px;
 	height: 45px;
