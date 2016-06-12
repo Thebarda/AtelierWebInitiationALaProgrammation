@@ -33,11 +33,11 @@ A faire en V2 :
 		<p id="presentation">Vous pensiez que l'<strong>art</strong> et les <strong>nouvelles technologies</strong> n'étaient pas en harmonie ? Détrompez vous, cet atelier va vous prouver le contraire !!!!</p>
        </br>
         <p id="presentation">
-		Lors de cette séance d'<strong>une heure</strong>, vous allez être initié aux bases de la programmation en Sonic Pi à travers la musique. Vous allez réaliser les différents exercices de façon ludique et pédagogique à l'aide d'un cours qui vous guidera tout au long de l'atelier.
+		Lors de cette séance d'<strong>une heure</strong>, vous allez être initié aux bases de la programmation en Sonic Pi à travers la musique. Vous allez réaliser les différents exercices de façon ludique et pédagogique à l'aide d'un cours qui vous guidera tout au long de <a href="session.php">l'atelier.</a>
 		A la fin de cette séance, vous serez capable de réaliser des mélodies complètes en répétition ! (Vidéo à venir)
        </p>
 		</br>
-       <p id="presentation">Vous pourrez consulter des exemples de code, et vous pourrez jouer la mélodie en effet vous vous rendrez compte que la programmation est un vrai jeu d'enfant !
+       <p id="presentation">Vous pourrez consulter des <a href="exemple.php">exemples</a> de code, et vous pourrez jouer la mélodie en effet vous vous rendrez compte que la programmation est un vrai jeu d'enfant !
 		Enfin pour commencer vous pouvez vous amusez avec le piano ci-dessous. Vous pouvez l'utiliser en cliquant sur les boutons noirs et blancs ci-dessous ou en appuyant sur les touches du clavier indiquées en dessous du piano! Bonne visite.</p>
         
         <p id="note"><b><?php
@@ -62,51 +62,72 @@ A faire en V2 :
 		}
             ?></b></p>
         
-        <form method="get" action="Accueil.php#piano" id="piano">
-            <input type="submit" value="Do" class="blanc" name="case1"/>
-            <input type="submit" value="Do'" class="noire" name="case2"/>
-            <input type="submit" value="Ré" class="blanc" name="case3"/>
-            <input type="submit" value="Mi" class="blanc" name="case4"/>
-            <input type="submit" value="Mi'" class="noire" name="case5"/>
-            <input type="submit" value="Fa" class="blanc" name="case6"/>
-            <input type="submit" value="Sol" class="blanc" name="case7"/>
-            <input type="submit" value="Sol'" class="noire" name="case8"/>
-            <input type="submit" value="La" class="blanc" name="case9"/>
-            <input type="submit" value="Si" class="blanc" name="case10"/>
-            <input type="submit" value="Si'" class="noire" name="case11"/>
-            <input type="submit" value="Do" class="blanc" name="case12"/>
-            <input type="submit" value="Ré" class="blanc" name="case13"/>
-            <input type="submit" value="Ré''" class="noire" name="case14"/>
-            <input type="submit" value="Mi" class="blanc" name="case15"/>
-            <input type="submit" value="Fa" class="blanc" name="case16"/>
-            <input type="submit" value="Fa''" class="noire" name="case17"/>
-            <input type="submit" value="Sol" class="blanc" name="case18"/>
-            <div>
-            <ul id="touches">
-                <li>q</li>
-                <li>z</li>
-                <li>s</li>
-                <li>d</li>
-                <li>r</li>
-                <li>f</li>
-                <li>g</li>
-                <li>y</li>
-                <li>h</li>
-                <li>j</li>
-                <li>i</li>
-                <li>k</li>
-                <li>l</li>
-                <li>p</li>
-                <li>m</li>
-                <li>4</li>
-                <li>8</li>
-                <li>5</li>
-            </ul>
+       <form method="get" action="Accueil.php#piano" id="piano">
+		   <div>
+            <div class="piano">
+					  <div id="piano-container">
+						<li>                
+						 <input type="submit" value="Do" class="blanc" name="case1"/>
+						 <p class="lettre">Q</p>
+						  <input type="submit" value="Do'" class="noire" name="case2"/>   
+						   <p class="lettre2">Z</p>
+						</li> 
+						<li>                
+						  <input type="submit" value="Ré" class="blanc" name="case3"/>
+						   <p class="lettre3">S</p>
+						  <input type="submit" value="Mi" class="noire" name="case4"/> 
+						  <p class="lettre4">D</p> 
+						</li> 
+						<li>                
+						  <input type="submit" value="Mi'" class="blanc" name="case5"/>
+						  <p class="lettre5">R</p>
+						</li> 
+						<li>                
+						  <input type="submit" value="Fa" class="blanc" name="case6"/>
+						  <p class="lettre">F</p>
+						  <input type="submit" value="Sol" class="noire" name="case7"/>  
+						  <p class="lettre2">G</p>    
+						</li> 
+						<li>                
+						  <input type="submit" value="Sol'" class="blanc" name="case8"/>
+						  <p class="lettre3">Y</p>    
+						  <input type="submit" value="La" class="noire" name="case9"/>
+						  <p class="lettre2">H</p>    
+						</li> 
+						<li>                
+						  <input type="submit" value="Si" class="blanc" name="case10"/>
+						  <p class="lettre3">J</p>    
+						  <input type="submit" value="Si'" class="noire" name="case11"/>
+						  <p class="lettre2">I</p>       
+						</li> 
+						<li>                
+						  <input type="submit" value="Do" class="blanc" name="case12"/>
+						  <p class="lettre3">K</p>    
+						  <input type="submit" value="Ré" class="noire" name="case13"/>
+						  <p class="lettre2">L</p>    
+						</li> 
+						<li>
+						  <input type="submit" value="Ré''" class="blanc" name="case14"/>
+						  <p class="lettre3">P</p>    
+						  <input type="submit" value="Mi" class="noire" name="case15"/>
+						  <p class="lettre2">M</p>    
+						</li>       
+						<li>
+						  <input type="submit" value="Fa" class="blanc" name="case16"/>
+						  <p class="lettre3">4</p>    
+						  <input type="submit" value="Fa''" class="noire" name="case17"/>
+						  <p class="lettre2">8</p>    
+						</li>
+						<li>
+						  <input type="submit" value="Sol" class="blanc" name="case18"/>
+						  <p class="lettre3">5</p>    
+						</li>  
+					  </div>
+					</div>
             </div>
             <div id="envoie">
            		 <p id="gauche">Appuyez sur le bouton pour écouter le morceau que vous avez joué</p>
-				<p id="droite"><input id="valider" type="submit" name="valid" value="Valider" id="valider"/></p>
-				<p id="droite"><a href="session.php"><input id="atelier" type="button" value="Passer à l'atelier"></a><p>
+				<p id="droite"><input id="valider" type="submit" name="valid" value="Valider" id="valider"/></p><a id="atelier" href="session.php">Passer à l'atelier</a>
 			</div>
         </form>
     

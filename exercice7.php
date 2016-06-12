@@ -300,13 +300,21 @@ A faire en V2 :
                 }else if(strrpos(nl2br($_POST["code"]), "0.5 end")!==FALSE){
                     echo $_POST["code"];
                 }else{
-                    if((substr_count(nl2br($_POST["code"]), "end")===6)&&(substr_count(nl2br($_POST["code"]), "define")===2)&&(substr_count(nl2br($_POST["code"]), "sleep 0.15")===2)&&(substr_count(nl2br($_POST["code"]), "$note")===5)&&(substr_count(nl2br($_POST["code"]), "$note2")===5)){
+                    if(substr_count(nl2br($_POST["code"]), "end")!=6){
+						 echo $_POST["code"];
+					}else if(substr_count(nl2br($_POST["code"]), "define")!=2){
+						 echo $_POST["code"];
+					}else if(substr_count(nl2br($_POST["code"]), '$note')!=11){
+						 echo $_POST["code"];
+					}else if(substr_count(nl2br($_POST["code"]), '$note2')!=5){
+						 echo $_POST["code"];
+					}else{
                         $nbLignes = substr_count(nl2br($_POST["code"]), "<br />");
                         $code = explode("<br />", nl2br($_POST["code"]));
                         $i=0;
                         $erreur = 0;
                         while($i <= $nbLignes){
-                            if(((strrpos($code[$i], '$note=60')!==FALSE)||(strrpos($code[$i], '$note =60')!==FALSE)||(strrpos($code[$i], '$note= 60$code[$i]')!==FALSE)||(strrpos($code[$i], '$note = 60')!==FALSE))||((strrpos($code[$i], 'while $note < 80')!==FALSE)||(strrpos($code[$i], 'while $note <80')!==FALSE)||(strrpos($code[$i], 'while $note< 80')!==FALSE)||(strrpos($code[$i], 'while $note<80')!==FALSE))||((strrpos($code[$i], 'play $note+20')!==FALSE)||(strrpos($code[$i], 'play $note +20')!==FALSE)||(strrpos($code[$i], 'play $note + 20')!==FALSE)||(strrpos($code[$i], 'play $note+ 20')!==FALSE))||((strrpos($code[$i], 'while $note2<=65')!==FALSE)||(strrpos($code[$i], 'while $note2 <=65')!==FALSE)||(strrpos($code[$i], 'while $note2<= 65')!==FALSE)||(strrpos($code[$i], 'while $note2 <= 65')!==FALSE))||((strrpos($code[$i], '$note2=60')!==FALSE)||(strrpos($code[$i], '$note2 =60')!==FALSE)||(strrpos($code[$i], '$note2= 60')!==FALSE)||(strrpos($code[$i], '$note2 = 60')!==FALSE))||(strrpos($code[$i], 'define :boucle do')!==FALSE)||(strrpos($code[$i], 'play $note')!==FALSE)||(strrpos($code[$i], 'sleep 0.15')!==FALSE)||(strrpos($code[$i], 'end')!==FALSE)||(strrpos($code[$i], '3.times do')!==FALSE)||(strrpos($code[$i], 'boucle')!==FALSE)||(strrpos($code[$i], 'sleep 1')!==FALSE)||(strrpos($code[$i], 'define :condition do |n|')!==FALSE)||(strrpos($code[$i], 'if n==64')!==FALSE)||(strrpos($code[$i], 'play n')!==FALSE)||(strrpos($code[$i], 'else')!==FALSE)||(strrpos($code[$i], 'play 71')!==FALSE)||(strrpos($code[$i], 'condition $note2')!==FALSE)||(strrpos($code[$i], 'sleep 0.5')!==FALSE)||(strrpos($code[$i], '$note = $note + 5')!==FALSE)||(strrpos($code[$i], '$note2 = $note2 + 1')!==FALSE)){
+                            if(((strrpos($code[$i], '$note=60')!==FALSE)||(strrpos($code[$i], '$note =60')!==FALSE)||(strrpos($code[$i], '$note= 60$code[$i]')!==FALSE)||(strrpos($code[$i], '$note = 60')!==FALSE))||((strrpos($code[$i], 'while $note < 80')!==FALSE)||(strrpos($code[$i], 'while $note <80')!==FALSE)||(strrpos($code[$i], 'while $note< 80')!==FALSE)||(strrpos($code[$i], 'while $note<80')!==FALSE))||((strrpos($code[$i], 'play $note+20')!==FALSE)||(strrpos($code[$i], 'play $note +20')!==FALSE)||(strrpos($code[$i], 'play $note + 20')!==FALSE)||(strrpos($code[$i], 'play $note+ 20')!==FALSE))||((strrpos($code[$i], 'while $note2<=65')!==FALSE)||(strrpos($code[$i], 'while $note2 <=65')!==FALSE)||(strrpos($code[$i], 'while $note2<= 65')!==FALSE)||(strrpos($code[$i], 'while $note2 <= 65')!==FALSE))||((strrpos($code[$i], '$note2=60')!==FALSE)||(strrpos($code[$i], '$note2 =60')!==FALSE)||(strrpos($code[$i], '$note2= 60')!==FALSE)||(strrpos($code[$i], '$note2 = 60')!==FALSE))||(strrpos($code[$i], 'define :boucle do')!==FALSE)||(strrpos($code[$i], 'play $note')!==FALSE)||(strrpos($code[$i], 'sleep 0.15')!==FALSE)||(strrpos($code[$i], 'end')!==FALSE)||(strrpos($code[$i], '3.times do')!==FALSE)||(strrpos($code[$i], 'boucle')!==FALSE)||(strrpos($code[$i], 'sleep 1')!==FALSE)||(strrpos($code[$i], 'define :condition do |n|')!==FALSE)||(strrpos($code[$i], 'if n==64')!==FALSE)||(strrpos($code[$i], 'play n')!==FALSE)||(strrpos($code[$i], 'else')!==FALSE)||(strrpos($code[$i], 'play 71')!==FALSE)||(strrpos($code[$i], 'condition $note2')!==FALSE)||(strrpos($code[$i], 'sleep 0.5')!==FALSE)||(strrpos($code[$i], '$note')!==FALSE)||(strrpos($code[$i], '$note2')!==FALSE)){
                                 $i = $i+1;
                             }else{
                                 $i = $i+1;
@@ -314,7 +322,7 @@ A faire en V2 :
                                 $erreur = 1;
                                 break;
                             }
-                            }
+                        }
                             if($erreur==1){
                                 echo $_POST["code"];
                             }else{
@@ -325,8 +333,6 @@ A faire en V2 :
 								}
 								echo $_POST["code"];
                             }
-                    }else{
-                        echo $_POST["code"];
                     }
                 }
 	}
@@ -349,58 +355,67 @@ A faire en V2 :
 		if(!empty($_POST["code"])){
 			if((strpbrk($_POST["code"], '#') != ""))
 			{
-				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (|, <<, >>, #)</b></p></span>";
+				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (<<, >>, #)</b></p></span><br/>";
 			}else{
                 if((strrpos(nl2br($_POST["code"]), 'do $note')!==FALSE)){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }
                 else if(strrpos(nl2br($_POST["code"]), "60 w")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), '80 p')!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }
                 else if(strrpos(nl2br($_POST["code"]), 'play $note s')!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "sleep 0.15 p")!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "20 s")!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "5 end")!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "end end")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "do b")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "boucle end")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "|n| if")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "64 p")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "n else")!==FALSE){
-                 echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                 echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "else p")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "71 end")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "60 w")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "do c")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), '$note2 $note2')!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "1 s")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "0.5 end")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else{
-                    if((substr_count(nl2br($_POST["code"]), "end")===6)&&(substr_count(nl2br($_POST["code"]), "define")===2)&&(substr_count(nl2br($_POST["code"]), "sleep 0.15")===2)&&(substr_count(nl2br($_POST["code"]), "$note")===5)&&(substr_count(nl2br($_POST["code"]), "$note2")===5)){
+                    
+					if(substr_count(nl2br($_POST["code"]), "end")!=6){
+						 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Le nombre de 'end' est différent de 6</b></h2></span><br/>";
+					}else if(substr_count(nl2br($_POST["code"]), "define")!=2){
+						 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Le nombre de 'define' est différent de 2</b></h2></span><br/>";
+					}else if(substr_count(nl2br($_POST["code"]), '$note')!=11){
+						 echo '<span id="erreur"><h2><b><img src="images/erreur.jpg" >Le nombre de "$note" est différent de 6</b></h2></span><br/>';
+					}else if(substr_count(nl2br($_POST["code"]), '$note2')!=5){
+						 echo '<span id="erreur"><h2><b><img src="images/erreur.jpg" >Le nombre de "$note2" est différent de 5</b></h2></span><br/>';
+					}else{
                         $nbLignes = substr_count(nl2br($_POST["code"]), "<br />");
                         $code = explode("<br />", nl2br($_POST["code"]));
                         $i=0;
                         while($i <= $nbLignes){
 							$erreur = 0;
-                            if(((strrpos($code[$i], '$note=60')!==FALSE)||(strrpos($code[$i], '$note =60')!==FALSE)||(strrpos($code[$i], '$note= 60$code[$i]')!==FALSE)||(strrpos($code[$i], '$note = 60')!==FALSE))||((strrpos($code[$i], 'while $note < 80')!==FALSE)||(strrpos($code[$i], 'while $note <80')!==FALSE)||(strrpos($code[$i], 'while $note< 80')!==FALSE)||(strrpos($code[$i], 'while $note<80')!==FALSE))||((strrpos($code[$i], 'play $note+20')!==FALSE)||(strrpos($code[$i], 'play $note +20')!==FALSE)||(strrpos($code[$i], 'play $note + 20')!==FALSE)||(strrpos($code[$i], 'play $note+ 20')!==FALSE))||((strrpos($code[$i], 'while $note2<=65')!==FALSE)||(strrpos($code[$i], 'while $note2 <=65')!==FALSE)||(strrpos($code[$i], 'while $note2<= 65')!==FALSE)||(strrpos($code[$i], 'while $note2 <= 65')!==FALSE))||((strrpos($code[$i], '$note2=60')!==FALSE)||(strrpos($code[$i], '$note2 =60')!==FALSE)||(strrpos($code[$i], '$note2= 60')!==FALSE)||(strrpos($code[$i], '$note2 = 60')!==FALSE))||(strrpos($code[$i], 'define :boucle do')!==FALSE)||(strrpos($code[$i], 'play $note')!==FALSE)||(strrpos($code[$i], 'sleep 0.15')!==FALSE)||(strrpos($code[$i], 'end')!==FALSE)||(strrpos($code[$i], '3.times do')!==FALSE)||(strrpos($code[$i], 'boucle')!==FALSE)||(strrpos($code[$i], 'sleep 1')!==FALSE)||(strrpos($code[$i], 'define :condition do |n|')!==FALSE)||(strrpos($code[$i], 'if n==64')!==FALSE)||(strrpos($code[$i], 'play n')!==FALSE)||(strrpos($code[$i], 'else')!==FALSE)||(strrpos($code[$i], 'play 71')!==FALSE)||(strrpos($code[$i], 'condition $note2')!==FALSE)||(strrpos($code[$i], 'sleep 0.5')!==FALSE)||(strrpos($code[$i], '$note = $note + 5')!==FALSE)||(strrpos($code[$i], '$note2 = $note2 + 1')!==FALSE)){
+                            if(((strrpos($code[$i], '$note=60')!==FALSE)||(strrpos($code[$i], '$note =60')!==FALSE)||(strrpos($code[$i], '$note= 60$code[$i]')!==FALSE)||(strrpos($code[$i], '$note = 60')!==FALSE))||((strrpos($code[$i], 'while $note < 80')!==FALSE)||(strrpos($code[$i], 'while $note <80')!==FALSE)||(strrpos($code[$i], 'while $note< 80')!==FALSE)||(strrpos($code[$i], 'while $note<80')!==FALSE))||((strrpos($code[$i], 'play $note+20')!==FALSE)||(strrpos($code[$i], 'play $note +20')!==FALSE)||(strrpos($code[$i], 'play $note + 20')!==FALSE)||(strrpos($code[$i], 'play $note+ 20')!==FALSE))||((strrpos($code[$i], 'while $note2<=65')!==FALSE)||(strrpos($code[$i], 'while $note2 <=65')!==FALSE)||(strrpos($code[$i], 'while $note2<= 65')!==FALSE)||(strrpos($code[$i], 'while $note2 <= 65')!==FALSE))||((strrpos($code[$i], '$note2=60')!==FALSE)||(strrpos($code[$i], '$note2 =60')!==FALSE)||(strrpos($code[$i], '$note2= 60')!==FALSE)||(strrpos($code[$i], '$note2 = 60')!==FALSE))||(strrpos($code[$i], 'define :boucle do')!==FALSE)||(strrpos($code[$i], 'play $note')!==FALSE)||(strrpos($code[$i], 'sleep 0.15')!==FALSE)||(strrpos($code[$i], 'end')!==FALSE)||(strrpos($code[$i], '3.times do')!==FALSE)||(strrpos($code[$i], 'boucle')!==FALSE)||(strrpos($code[$i], 'sleep 1')!==FALSE)||(strrpos($code[$i], 'define :condition do |n|')!==FALSE)||(strrpos($code[$i], 'if n==64')!==FALSE)||(strrpos($code[$i], 'play n')!==FALSE)||(strrpos($code[$i], 'else')!==FALSE)||(strrpos($code[$i], 'play 71')!==FALSE)||(strrpos($code[$i], 'condition $note2')!==FALSE)||(strrpos($code[$i], 'sleep 0.5')!==FALSE)||(strrpos($code[$i], '$note')!==FALSE)||(strrpos($code[$i], '$note2')!==FALSE)){
                                 $i = $i+1;
                             }else{
                                 $i = $i+1;
@@ -408,13 +423,12 @@ A faire en V2 :
                                 $erreur = 1;
                             }
                             if($erreur==1){
-                                echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".$nbErreur." (".$code[$nbErreur-1].")</b></h2></span>";
-                            }else{
-                                echo "<span id='noerreur'><h2><b><img src='images/valider.png'>Code validé. Ecouter la mélodie.</b></h2></span>";
+                                echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".$nbErreur." (".$code[$nbErreur-1].")</b></h2></span><br/>";
                             }
 						}
-                    }else{
-                        echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Il manque une ou plusieurs occurences</b></h2></span>";
+						if($erreur!=1){
+                            echo "<span id='noerreur'><h2><b><img src='images/valider.png'>Code validé. Ecouter la mélodie.</b></h2></span>";
+                        }
                     }
                 }
             }

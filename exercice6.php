@@ -245,93 +245,97 @@ A faire en V2 :
                 }else if(strrpos(nl2br($_POST["code"]), "maFonction2 end")!==FALSE){
                     echo $_POST["code"];
                 }else{
-                    if((substr_count(nl2br($_POST["code"]), "end")===3)&&(substr_count(nl2br($_POST["code"]), "sleep 0.5")===4)&&(substr_count(nl2br($_POST["code"]), "play 62")===2)){
+                    if(substr_count(nl2br($_POST["code"]), "end")!=3){
+						echo $_POST["code"];
+					}else if(substr_count(nl2br($_POST["code"]), "sleep 0.5")!=4){
+						echo $_POST["code"];
+					}else if(substr_count(nl2br($_POST["code"]), "play 60")!=2){
+						echo $_POST["code"];
+					}else{
                         $nbLignes = substr_count(nl2br($_POST["code"]), "<br />");
                         $code = explode("<br />", nl2br($_POST["code"]));
                         $i=0;
                         $erreur = 0;
-                        while($i <= $nbLignes){
-                        if(($i==0)&&(strrpos($code[0], 'define :maFonction1 do')===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==1)&&(strrpos($code[1], 'play 60')===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==2)&&(strrpos($code[2], 'sleep 0.5')===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==3)&&(strrpos($code[3], "play 62")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==4)&&(strrpos($code[3], "sleep 0.5")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==5)&&(strrpos($code[5], "end")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==6)&&(strrpos($code[6], 'define :maFonction2 do')===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==7)&&(strrpos($code[7], "play 64")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==8)&&(strrpos($code[8], "sleep 0.5")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==9)&&(strrpos($code[9], "play 60")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==10)&&(strrpos($code[10], "sleep 0.5")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==11)&&(strrpos($code[11], "end")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==12)&&(strrpos($code[12], "2.times do")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==13)&&(strrpos($code[13], "maFonction1")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==14)&&(strrpos($code[14], "maFonction2")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else if(($i==15)&&(strrpos($code[15], "end")===FALSE)){
-                            echo $_POST["code"];
-							$erreur = 1;
-							break;
-						}else{
-                            $i++;
-                        }
-                    }
-                    if($erreur==0){
-						//ecriture dans le fichier exercice6
-                        $fichier = fopen("exercice6.txt", "w+");
-                        if(fwrite($fichier, $_POST["code"])){
-                            shell_exec('sonic_pi < exercice6.txt');
-                        }
-						echo $_POST["code"];
-					}
-                    }else{
-                        echo $_POST["code"];
+							while($i <= $nbLignes){
+							if(($i==0)&&(strrpos($code[0], 'define :maFonction1 do')===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==1)&&(strrpos($code[1], 'play 60')===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==2)&&(strrpos($code[2], 'sleep 0.5')===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==3)&&(strrpos($code[3], "play 62")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==4)&&(strrpos($code[3], "sleep 0.5")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==5)&&(strrpos($code[5], "end")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==6)&&(strrpos($code[6], 'define :maFonction2 do')===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==7)&&(strrpos($code[7], "play 64")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==8)&&(strrpos($code[8], "sleep 0.5")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==9)&&(strrpos($code[9], "play 60")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==10)&&(strrpos($code[10], "sleep 0.5")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==11)&&(strrpos($code[11], "end")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==12)&&(strrpos($code[12], "2.times do")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==13)&&(strrpos($code[13], "maFonction1")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==14)&&(strrpos($code[14], "maFonction2")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else if(($i==15)&&(strrpos($code[15], "end")===FALSE)){
+								echo $_POST["code"];
+								$erreur = 1;
+								break;
+							}else{
+								$i++;
+							}
+						}
+						if($erreur==0){
+							//ecriture dans le fichier exercice6
+							$fichier = fopen("exercice6.txt", "w+");
+							if(fwrite($fichier, $_POST["code"])){
+								shell_exec('sonic_pi < exercice6.txt');
+							}
+							echo $_POST["code"];
+						}
                     }
                 }
-                }
+            }
 	?></textarea>
 			<div id="validation">
 		  		 <p id="valid"><input id="jouer" type="submit" name="jouer" value="Jouer" id="jouer"/></p>
@@ -351,90 +355,96 @@ A faire en V2 :
 		if(!empty($_POST["code"])){
 			if((strpbrk($_POST["code"], '|') != "")||(strpbrk($_POST["code"], '#') != ""))
 			{
-				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (|, <<, >>, #)</b></p></span>";
+				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (|, <<, >>, #)</b></p></span><br/>";
 			}else{
                 if((strrpos(nl2br($_POST["code"]), "65 w")!==FALSE)){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }
                 else if(strrpos(nl2br($_POST["code"]), "do p")!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), 'sleep 0.5 p')!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "do m")!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "0.5 end")!==FALSE){
-                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                   echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "maFonction2 end")!==FALSE){
-                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                  echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else{
-                    if((substr_count(nl2br($_POST["code"]), "end")===3)&&(substr_count(nl2br($_POST["code"]), "sleep 0.5")===4)&&(substr_count(nl2br($_POST["code"]), "play 62")===2)){
+					if(substr_count(nl2br($_POST["code"]), "end")!=3){
+						echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Le nombre de 'end' est différent de 3</b></h2></span><br/>";
+					}else if(substr_count(nl2br($_POST["code"]), "sleep 0.5")!=4){
+						echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Le nombre de 'sleep 0.5' est différent de 4</b></h2></span><br/>";
+					}else if(substr_count(nl2br($_POST["code"]), "play 60")!=2){
+						echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Le nombre de 'play 60' est différent de 2</b></h2></span><br/>";
+					}else{
                         $nbLignes = substr_count(nl2br($_POST["code"]), "<br />");
                         $code = explode("<br />", nl2br($_POST["code"]));
                         $i=0;
                         $erreur = 0;
 						while($i <= $nbLignes){
 							if(($i==0)&&(strrpos($code[0], 'define :maFonction1 do')===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==1)&&(strrpos($code[1], 'play 60')===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==2)&&(strrpos($code[2], 'sleep 0.5')===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==3)&&(strrpos($code[3], "play 62")===FALSE)){
-								echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==4)&&(strrpos($code[4], "sleep 0.5")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==5)&&(strrpos($code[5], "end")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==6)&&(strrpos($code[6], 'define :maFonction2 do')===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==7)&&(strrpos($code[7], "play 64")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==8)&&(strrpos($code[8], "sleep 0.5")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==9)&&(strrpos($code[9], "play 60")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==10)&&(strrpos($code[10], "sleep 0.5")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==11)&&(strrpos($code[11], "end")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==12)&&(strrpos($code[12], "2.times do")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==13)&&(strrpos($code[13], "maFonction1")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==14)&&(strrpos($code[14], "maFonction2")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==15)&&(strrpos($code[15], "end")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else{
@@ -449,8 +459,6 @@ A faire en V2 :
 								shell_exec('sonic_pi < exercice6.txt');
 							}
 						}
-                    }else{
-                        echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Vous ne possédez pas le même nombre d'occurence</b></h2></span>";
                     }
                 }
             }

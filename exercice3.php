@@ -253,20 +253,20 @@ A faire en V2 :
 		if(!empty($_POST["code"])){
 			if((strpbrk($_POST["code"], '|') != "")||(strpbrk($_POST["code"], '#') != ""))
 			{
-				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (|, <<, >>, #)</b></p></span>";
+				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (|, <<, >>, #)</b></p></span><br/>";
 			}else{
                 if((strrpos(nl2br($_POST["code"]), ".times do p")!==FALSE)){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }
                 else if(strrpos(nl2br($_POST["code"]), "sleep 0.5 p")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "play 60 s")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }
                 else if(strrpos(nl2br($_POST["code"]), "play 62 s")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "play 64 s")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else{
                     if((substr_count(nl2br($_POST["code"]), "play 60")===2)&&(substr_count(nl2br($_POST["code"]), "sleep 0.5")===4)){
 						$nbLignes = substr_count(nl2br($_POST["code"]), "<br />");
@@ -277,48 +277,48 @@ A faire en V2 :
 							if(($i==0)&&(strrpos($code[0], ".times do")!==FALSE)){
 								$line_split = explode(".",$code[0]);
 								 if(!(is_numeric($line_split[0]))){
-									echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+									echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 									$erreur = 1;
 								}
 								$i++;
 							}else if(($i==0)&&(strrpos($code[0], ".times do")===FALSE)){
-									echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+									echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 									$erreur = 1;
 									$i++;
 							}else if(($i==1)&&(strrpos($code[1], "play 60")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==2)&&(strrpos($code[2], "sleep 0.5")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==3)&&(strrpos($code[3], "play 62")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==4)&&(strrpos($code[4], "sleep 0.5")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==5)&&(strrpos($code[5], "play 64")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==6)&&(strrpos($code[6], "sleep 0.5")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==7)&&(strrpos($code[7], "play 60")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==8)&&(strrpos($code[8], "sleep 0.5")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 								$i++;
 							}else if(($i==9)&&(strrpos($code[9], "end")===FALSE)){
-								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span>";
+								 echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Erreur à la ligne ".($i+1)." (".$code[$i].")</b></h2></span><br/>";
 								$erreur = 1;
 							}else{
 								$i++;
@@ -328,7 +328,7 @@ A faire en V2 :
 							echo "<span id='noerreur'><h2><b><img src='images/valider.png' >Code valide. Ecoutez la mélodie !</b></h2></span>";
 						}
                     }else{
-                        echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Le nombre de 'play 60' ou de 'sleep 0.5' n'est pas le bon</b></h2></span>";
+                        echo "<span id='erreur'><h2><b><img src='images/erreur.jpg' >Le nombre de 'play 60' ou de 'sleep 0.5' n'est pas le bon</b></h2></span><br/>";
                     }
                 }
             }
