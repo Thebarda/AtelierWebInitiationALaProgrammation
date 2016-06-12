@@ -33,11 +33,11 @@ A faire en V2 :
 		<p id="presentation">Vous pensiez que l'<strong>art</strong> et les <strong>nouvelles technologies</strong> n'étaient pas en harmonie ? Détrompez vous, cet atelier va vous prouver le contraire !!!!</p>
        </br>
         <p id="presentation">
-		Lors de cette séance d'<strong>une heure</strong>, vous allez être initié aux bases de la programmation en Sonic Pi à travers la musique. Vous allez réaliser les différents exercices de façon ludique et pédagogique à l'aide d'un cours qui vous guidera tout au long de <a href="session.php">l'atelier.</a>
+		Lors de cette séance d'<strong>une heure</strong>, vous allez être initié aux bases de la programmation en Sonic Pi à travers la musique. Vous allez réaliser les différents exercices de façon ludique et pédagogique à l'aide d'un cours qui vous guidera tout au long de <a id="link" href="session.php">l'atelier.</a>
 		A la fin de cette séance, vous serez capable de réaliser des mélodies complètes en répétition ! (Vidéo à venir)
        </p>
 		</br>
-       <p id="presentation">Vous pourrez consulter des <a href="exemple.php">exemples</a> de code, et vous pourrez jouer la mélodie en effet vous vous rendrez compte que la programmation est un vrai jeu d'enfant !
+       <p id="presentation">Vous pourrez consulter des <a id="link" href="exemple.php">exemples</a> de code, et vous pourrez jouer la mélodie en effet vous vous rendrez compte que la programmation est un vrai jeu d'enfant !
 		Enfin pour commencer vous pouvez vous amusez avec le piano ci-dessous. Vous pouvez l'utiliser en cliquant sur les boutons noirs et blancs ci-dessous ou en appuyant sur les touches du clavier indiquées en dessous du piano! Bonne visite.</p>
         
         <p id="note"><b><?php

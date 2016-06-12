@@ -99,7 +99,7 @@ A faire en V2 :
 		<h3 id="exo">Exercice n°1</h3>
 		<p id="intitule">- Jouer les notes do, ré et si  avec 1,5 secondes de repos entre chaque note.</p>
 	</div>
-	   <form id="exo" method="post" action="#cours">
+	   <form id="exo" method="post" action="#">
            <textarea id="code" class="textarea" name="code" cols="70" placeholder="Ecrivez votre code ici..."><?php
 		if(isset($_POST["refaire"])){
                     	shell_exec("> exercice1.txt");
@@ -175,11 +175,11 @@ A faire en V2 :
                 }
 	}
 	?></textarea>
-           <div id="validation">
+			<div id="validation">
           		 <p id="valid"><input id="jouer" type="submit" name="jouer" value="Jouer" id="jouer"/></p>
            		 <a href="exercice2.php" id="suivant">Suivant</a>
-	</div>		
-        </form>
+			</div>		
+    </form>
 	<form id="refaire" method="post" action="exercice1.php">
 		<input id="reset" type="submit" name="refaire" value="Refaire l'exercice" id="jouer"/>
 	</form>
