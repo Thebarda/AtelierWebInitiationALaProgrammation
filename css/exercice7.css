@@ -258,8 +258,8 @@ ol{
 	height: 50px;
 	padding-left: 25px;
 	padding-right: 25px;
-	padding-top: 1.73%;
-	padding-bottom: 1.75%
+	padding-top: 0.45rem;
+	padding-bottom: 0.5rem;
 }
 #validation #suivant{
 	font-weight: bold;

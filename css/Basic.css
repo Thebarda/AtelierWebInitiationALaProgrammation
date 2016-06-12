@@ -96,6 +96,7 @@ a{
   width:700px;
   height:300px;
   margin:auto;
+text-decoration: none;
   border-radius:20px 20px 0 0;
   overflow:hidden;
   background: -webkit-linear-gradient(#111, #444);
@@ -196,7 +197,7 @@ a{
 /********************/
 
 form{
-	margin-left: -10%;
+	margin-left: 5%;
 	margin-top : 2%;
     display: inline-block;
 }
@@ -204,7 +205,6 @@ form{
 #touches{
     text-decoration: none;
     display: inline-block;
-    margin-left: -4%;
 	width: 100%;
 }
 #touches>li{

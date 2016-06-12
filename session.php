@@ -33,7 +33,7 @@ A faire en V2 :
 			<div id="pres_text">
 				<p>Vous êtes sur le point de commencer la session. Avant d'appuyer sur le bouton vert, laissez-nous vous expliquer comment va fonctionner la session.<br/><br/>
                     La session comporte 8 exercices, dont un libre, à faire en <b>auto-correction</b>. Heureusement pour vous guider, vous aurez un cours, qui se situera à gauche de l'écran. Un énoncé vous sera présenté à droite du cours et un espace pour écrire votre code en dessous de l'énoncé.<br/>Si vous souhaitez refaire un exercice, il vous suffit d'appuyer sur le bouton "Refaire l'exercice". Bon codage !
-					<b>Remarque : </b>L'indentation n'est pas possible !</p>
+					<b>Remarque : </b>L'indentation et le saut de ligne ne sont pas possible ! Le saut de ligne est possible dans l'exercice 8.</p>
 				
 			</div>
 			<form method="post" action="exercice1.php" id="demarrage">
