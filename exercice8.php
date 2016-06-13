@@ -63,7 +63,7 @@
                     $juste = true;
                 }else if($line_split[1] == "do" && sizeof($line_split) == 2 && explode(".",$line_split[0])[1] == "times"){
                     if(!(is_numeric(explode(".",$line_split[0])[0]) || var_func_exist(explode(".",$line_split[0])[0],explode(" ",$var_list))) ){
-                        echo '<p style="color:red;"><b>Syntaxe incorrect #'.$num_ligne.' : '.$line.' (La variables '.explode(".",$line_split[0])[0].' n\'est pas déclarée)</b></p><br/>';
+                        echo '<p style="color:red;"><b>Syntaxe incorrect #'.$num_ligne.' : '.$line.' (La variable '.explode(".",$line_split[0])[0].' n\'est pas déclarée)</b></p><br/>';
                         $error = true;
                     }else{
                         $juste = true;
@@ -105,6 +105,7 @@
             else echo '<p style="color:red;"><b>Syntaxe incorrect #'.$num_ligne.' : '.$line.' (Il y a '.-$end .' end en trop dans le programme)</b></p><br/>';
         }
         if($juste == true && $error == false){
+			shell_exec("> exercice8.txt");
                     $fichier = fopen("exercice8.txt", "w+");
                     if(fwrite($fichier, $_POST["code"])){
                         shell_exec('sonic_pi < exercice8.txt');
@@ -340,13 +341,11 @@ A faire en V2 :
 		                        $contenu = fread($fichier, $octet);
 		                        echo $contenu; 
 		                    }
+				}else{
+					echo $_POST["code"];
 				}
                         }
 
-                        //Verification du code
-                        if(!empty($_POST["code"])){
-                            checkCode($_POST["code"],0);
-                        }
                     ?></textarea>
                 <div id="validation" style="margin-left:67%;">
                     <p id="valid"><input id="jouer" type="submit" name="jouer" value="Jouer" id="jouer"/></p>
@@ -363,6 +362,7 @@ A faire en V2 :
 			$_POST["code"]="";
 		}
 		if(!empty($_POST["code"])){
+			shell_exec("> exercice8.txt");
                     checkCode($_POST["code"],1);
                 }else{
                     echo "<span id='erreur'><p><b>Veuillez compléter votre code</b></p></span>";

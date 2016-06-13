@@ -192,15 +192,15 @@ A faire en V2 :
 		if(!empty($_POST["code"])){
 			if((strpbrk($_POST["code"], '|') != "")||(strpbrk($_POST["code"], '#') != ""))//Vérification des caractères interdits
 			{
-				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (|, <<, >>, #)</b></p></span>";//Affiche l'erreur
+				echo "<span id='erreur'><p><b>Erreur : caractère incorrecte (|, <<, >>, #)</b></p></span><br/>";//Affiche l'erreur
 			}else{
                 if((strrpos(nl2br($_POST["code"]), "play 60 s")!==FALSE)){//Vérification si la ligne contient plusieurs instructions
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }
                 else if(strrpos(nl2br($_POST["code"]), "sleep 1.5 p")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else if(strrpos(nl2br($_POST["code"]), "play 62 s")!==FALSE){
-                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span>";
+                    echo "<span id='erreur'><p><b>Veuillez insérer une instruction par ligne</b></p></span><br/>";
                 }else{
                     //Calcule le nombre de lignes-1
                     $nbLignes = substr_count(nl2br($_POST["code"]), "<br />");

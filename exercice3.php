@@ -231,7 +231,9 @@ A faire en V2 :
 						echo $_POST["code"];
 					}
                         
-            }
+            }else{
+			echo $_POST["code"];
+		}
         }
     }
 	?></textarea>
