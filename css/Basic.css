@@ -185,7 +185,7 @@ a{
 /********************/
 
 form{
-	margin-left: -5rem;
+	margin-left: -7.5rem;
 	margin-top : 2%;
     display: inline-block;
 }
@@ -220,13 +220,14 @@ form{
 	display: inline-block;
 }
 #envoie{
-	margin-left: 17.5%;
+	margin-left: 30.3%;
 	width: 100rem;
 }
 
 #envoie #valider{
 	margin-left: 5%;
 	margin-top: 20px;
+	margin-bottom: 0.7rem;
 	background-color:black;
 	color : #FFFFFF;
 	font-size: 15px;
@@ -236,7 +237,12 @@ form{
 	padding-left: 25px;
 	padding-right: 25px;
 }
-#envoie #atelier{
+video{
+	margin-left : 21rem;
+	margin-top : 2rem;
+}
+#atelier{
+	margin-left : 64.5%;
 	color: black;
 	background-color: green;
 	padding-left: 25px;
@@ -246,7 +252,6 @@ form{
 	font-size: 15px;
 	border:none;
 	height: 35px;
-	margin-left: 2%;
 }
 
 footer{

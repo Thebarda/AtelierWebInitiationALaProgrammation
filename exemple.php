@@ -36,7 +36,7 @@ A faire en V2 :
 		</header>
 		<nav>
 			<ul>
-				<li ><a href="Accueil.php">Accueil</a></li><!-- 
+				<li ><a href="index.php">Accueil</a></li><!-- 
 			--><li><a href="session.php">Atelier</a></li><!-- 
 			--><li id=here><a href="exemple.php">Exemple</a></li>
 			</ul>

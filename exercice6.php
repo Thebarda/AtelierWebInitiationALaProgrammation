@@ -67,7 +67,7 @@ A faire en V2 :
 		</header>
 		<nav>
 			<ul>
-				<li ><a href="Accueil.php">Accueil</a></li><!-- 
+				<li ><a href="index.php">Accueil</a></li><!-- 
 			--><li id=here><a href="session.php">Atelier</a></li><!-- 
 			--><li><a href="exemple.php">Exemple</a></li>
 			</ul>
@@ -102,7 +102,7 @@ A faire en V2 :
 			 <h2>1. Introduction</h2>
 			
 			 <h3>A. Principe de fonctionnement</h3> 
-				 <p> Le fonctionnment en Sonic Pi est comparable à une recette de cuisine : </p>
+				 <p> Le fonctionnement en Sonic Pi est comparable à une recette de cuisine : </p>
 				 <ul>
 					<li>Le plat est semblable à la mélodie jouée</li>
 					<li>Les notes sont les équivalents des ingrédients de la recette</li>

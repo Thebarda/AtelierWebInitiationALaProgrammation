@@ -281,7 +281,7 @@ ol{
     margin-left: 10%;
     color: red;
     position:absolute;
-    margin-top: -1rem;
+    margin-top: 0rem;
     width: 75%;
 }
 #erreur>h2{
@@ -308,7 +308,7 @@ ol{
 
 #progress{
    position: absolute;
-   margin-top: -3.5rem;
+   margin-top: -3rem;
    margin-left: 5rem;
    width: 300px;
    padding: 4px;
